@@ -3,9 +3,6 @@
   grid-gap: 2em;
   grid-template-columns: 1fr 14fr 1fr;
 }
-.hidden {
-  display: none;
-}
 img {
   width: 100%;
   max-height: 600px;

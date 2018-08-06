@@ -1,6 +1,9 @@
 let prevButton = document.querySelector('#prevButton');
 let nextButton = document.querySelector('#nextButton');
-let imgArr = document.querySelectorAll('img');
+let img = document.querySelector('img');
+let imgArr = ['https://motivationping.com/wp-content/uploads/2017/10/motivational-inspirational-quotes-30.jpg',
+              'http://rishikajain.com/wp-content/uploads/2017/07/create-yourself.jpg',
+              'https://mk0ryrobg0ysk5t06n.kinstacdn.com/wp-content/uploads/2017/09/Hustle-Quotes-Motivation_-Don%E2%80%99t-stay-in-bed-unless-you-can.jpg'];
 let index = 0;
 
 prevButton.addEventListener('click', showPrevImage);
@@ -8,10 +11,9 @@ nextButton.addEventListener('click', showNextImage);
 prevButton.disabled = true;
 
 function showPrevImage() {
-  imgArr[index].classList.add('hidden');
-  imgArr[index-1].classList.remove('hidden');
   index--;
-  nextButton.disabled = false;
+  img.src = imgArr[index];
+    nextButton.disabled = false;
 
   if (index === 0) {
   prevButton.disabled = true;
@@ -19,9 +21,8 @@ function showPrevImage() {
 }
 
 function showNextImage() {
-  imgArr[index].classList.add('hidden');
-  imgArr[index+1].classList.remove('hidden');
   index++;
+  img.src = imgArr[index];
   prevButton.disabled = false;
 
   if (index === imgArr.length-1) {
