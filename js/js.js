@@ -1,15 +1,20 @@
+let sliderFactory = {
+  createNewSlider: function(){
+    let newSlider = {
+      prevButton: null,
+      nextButton: null,
+      img: null,
+      imgArr: ['https://motivationping.com/wp-content/uploads/2017/10/motivational-inspirational-quotes-30.jpg',
+                  'http://rishikajain.com/wp-content/uploads/2017/07/create-yourself.jpg',
+                  'https://mk0ryrobg0ysk5t06n.kinstacdn.com/wp-content/uploads/2017/09/Hustle-Quotes-Motivation_-Don%E2%80%99t-stay-in-bed-unless-you-can.jpg'],
+      index: 0,
 
-let slider = {
-  prevButton: document.querySelector('#prevButton'),
-  nextButton: document.querySelector('#nextButton'),
-  img: document.querySelector('img'),
-  imgArr: ['https://motivationping.com/wp-content/uploads/2017/10/motivational-inspirational-quotes-30.jpg',
-              'http://rishikajain.com/wp-content/uploads/2017/07/create-yourself.jpg',
-              'https://mk0ryrobg0ysk5t06n.kinstacdn.com/wp-content/uploads/2017/09/Hustle-Quotes-Motivation_-Don%E2%80%99t-stay-in-bed-unless-you-can.jpg'],
-  index: 0,
-
-start: function() {
+start: function(elId) {
   let that = this;
+  let el = document.querySelector(`#${elId}`);
+  this.prevButton = el.querySelector('.prevButton');
+  this.nextButton = el.querySelector('.nextButton');
+  this.img = el.querySelector('img');
 
   this.prevButton.addEventListener('click', (e) => that.showPrevImage(e));
   this.nextButton.addEventListener('click',(e) => that.showNextImage(e));
@@ -35,6 +40,7 @@ showPrevImage: function (e) {
     this.nextButton.disabled = true;
   }
 }
+    }
+    return newSlider;
+  }
 }
-
-slider.start();
