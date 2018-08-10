@@ -1,14 +1,15 @@
 .slider-wrapper {
   display: grid;
   grid-template-columns: 1fr 14fr 1fr;
+  max-width: 75vmax;
+  margin: 0 auto;
 }
 img {
   width: 100%;
-  max-height: 350px;
+  height: auto;
 }
 .button {
   background: lemonchiffon;
-  padding: 1em;
   font-size: 4em;
   color: lightcoral;
   display: grid;
@@ -18,4 +19,8 @@ img {
 }
 .button:active {
   background: rgb(92, 86, 36);
+}
+.default-img {
+  background: lavenderblush;
+  width: 100px;
 }

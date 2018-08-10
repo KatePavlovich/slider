@@ -7,19 +7,24 @@ class Slider {
     this.index = 0;
   }
   
-
+//start slider with 2 methods of binding this
   start(elId) {
-    let that = this;
     let el = document.querySelector(`#${elId}`);
+    el.innerHTML = `<div id="slider1" class="slider-wrapper">
+      <button class="button prevButton">&lt;</button>
+      <img src="https://img.memecdn.com/click-all-buttons_o_1460213.jpg" alt="click right button to get images" class="default-img"/>
+      <button class="button nextButton">&gt;</button>
+    </div>`;
     this.prevButton = el.querySelector('.prevButton');
     this.nextButton = el.querySelector('.nextButton');
     this.img = el.querySelector('img');
 
-    this.prevButton.addEventListener('click', (e) => that.showPrevImage(e));
-    this.nextButton.addEventListener('click',(e) => that.showNextImage(e));
+    this.prevButton.addEventListener('click', (e) => this.showPrevImage(e));
+    this.nextButton.addEventListener('click', this.showNextImage.bind(this));
     this.prevButton.disabled = true;
   };
 
+//show previous image & disable previous button if we reached first img in array
   showPrevImage(e) {
     this.index--;
     this.img.src = this.imgArr[this.index];
@@ -30,6 +35,7 @@ class Slider {
     }
   };
 
+  //show previous image & disable previous button if we reached last img in the array
   showNextImage(e) {
     this.index++;
     this.img.src = this.imgArr[this.index];
