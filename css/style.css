@@ -1,8 +1,6 @@
 .slider-wrapper {
   display: grid;
-  grid-gap: 2em;
   grid-template-columns: 1fr 14fr 1fr;
-  margin-bottom: 2em;
 }
 img {
   width: 100%;
