@@ -2,7 +2,8 @@ class SliderLogic {
     constructor() {
         this._imgArr = [];
         this.index = 0;
-        this._dataService = new SliderDataService();
+        //this._dataService = new SliderDataService();
+        this._dataService = new SliderAjaxDataService();
     }
 
     getCurrentImgUrl() {
