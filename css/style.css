@@ -1,7 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .slider-wrapper {
   display: grid;
   grid-template-columns: 1fr 14fr 1fr;
-  max-width: 75vmax;
   margin: 0 auto;
 }
 img {
@@ -9,7 +12,7 @@ img {
   height: auto;
 }
 .button {
-  background: lemonchiffon;
+  background: white;
   font-size: 4em;
   color: lightcoral;
   display: grid;
@@ -21,6 +24,15 @@ img {
   background: rgb(92, 86, 36);
 }
 .default-img {
-  background: lavenderblush;
-  width: 100px;
+  max-width: 75vmax;
+  max-height: 200px;
+}
+
+@media (min-width: 682px) {
+  .slider-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .default-img {
+    max-width: 90vmax;
+  }
 }
